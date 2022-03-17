@@ -2,11 +2,12 @@ import React from 'react';
 import './App.css';
 import Shop from './features/shop/Shop';
 import { Cart } from './features/cart/Cart';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
     <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
             <div className="container">
                 <a className="navbar-brand" href="#">Online Store</a>
             </div>
@@ -22,6 +23,7 @@ function App() {
                   <Cart />
               </div>
           </div>
+          <ToastContainer />
       </div>
     </div>
   );

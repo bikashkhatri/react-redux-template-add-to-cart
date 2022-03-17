@@ -19,11 +19,17 @@ export function Cart() {
                   <div className="d-flex justify-content-between">
                     <p>
                       <strong>
-                        {item.name} ----- {item.quantity}
+                        {item.quantity} x {item.name}
                       </strong>
                     </p>
                     <div>${item.unitPrice}</div>
-                    <button title="Remove" type="button" className="close border-0 mb-2" aria-label="Close" onClick={() =>dispatch(removeFromCart({id: item.id}))}>
+                    <button
+                      title="Remove"
+                      type="button"
+                      className="close border-0 mb-2"
+                      aria-label="Close"
+                      onClick={() => dispatch(removeFromCart({ id: item.id }))}
+                    >
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
