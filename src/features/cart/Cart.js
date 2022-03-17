@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectCartTotal } from "./cartSlice";
+import { removeFromCart, selectCartTotal } from "./cartSlice";
 
 export function Cart() {
     const cart = useSelector(state => state.cart)
@@ -15,7 +15,7 @@ export function Cart() {
           {cart.items.length > 0 ? (
             <React.Fragment>
               {cart.items.map((item, i) => (
-                <div className="item border-bottom" key={i}>
+                <div className="item border-bottom mt-2" key={i}>
                   <div className="d-flex justify-content-between">
                     <p>
                       <strong>
@@ -23,6 +23,9 @@ export function Cart() {
                       </strong>
                     </p>
                     <div>${item.unitPrice}</div>
+                    <button title="Remove" type="button" className="close border-0 mb-2" aria-label="Close" onClick={() =>dispatch(removeFromCart({id: item.id}))}>
+                      <span aria-hidden="true">&times;</span>
+                    </button>
                   </div>
                 </div>
               ))}
