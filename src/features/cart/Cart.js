@@ -26,7 +26,7 @@ export function Cart() {
                     <button
                       title="Remove"
                       type="button"
-                      className="close border-0 mb-2"
+                      className="close border-0 mb-2 text-danger"
                       aria-label="Close"
                       onClick={() => dispatch(removeFromCart({ id: item.id }))}
                     >
